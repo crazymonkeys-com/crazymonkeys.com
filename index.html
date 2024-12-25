@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crazy Monkeys Products</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Welcome to Crazy Monkeys!</h1>
+        <p>Explore our awesome products below.</p>
+    </header>
+
+    <section id="products">
+        <!-- Product 1 -->
+        <div class="product">
+            <h3>Product 1: Monkey Mug</h3>
+            <p>Description: A fun mug for monkey lovers!</p>
+            <p class="price">Price: $10</p>
+            <img src="img/monkey-mug.jpg" alt="Monkey Mug" class="product-image"/>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product">
+            <h3>Product 2: Monkey T-Shirt</h3>
+            <p>Description: A cool t-shirt with a monkey print.</p>
+            <p class="price">Price: $20</p>
+            <img src="img/monkey-tshirt.jpg" alt="Monkey T-Shirt" class="product-image"/>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product">
+            <h3>Product 3: Monkey Plush Toy</h3>
+            <p>Description: A soft and cuddly plush monkey for all ages!</p>
+            <p class="price">Price: $15</p>
+            <img src="img/monkey-plush.jpg" alt="Monkey Plush Toy" class="product-image"/>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product">
+            <h3>Product 4: Monkey Backpack</h3>
+            <p>Description: A cute backpack shaped like a monkey's face.</p>
+            <p class="price">Price: $25</p>
+            <img src="img/monkey-backpack.jpg" alt="Monkey Backpack" class="product-image"/>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product">
+            <h3>Product 5: Monkey Keychain</h3>
+            <p>Description: A small keychain featuring a playful monkey design.</p>
+            <p class="price">Price: $5</p>
+            <img src="img/monkey-keychain.jpg" alt="Monkey Keychain" class="product-image"/>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product">
+            <h3>Product 6: Monkey Hat</h3>
+            <p>Description: A cozy hat with a monkey face design for winter.</p>
+            <p class="price">Price: $12</p>
+            <img src="img/monkey-hat.jpg" alt="Monkey Hat" class="product-image"/>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product">
+            <h3>Product 7: Monkey Phone Case</h3>
+            <p>Description: A durable phone case with a cute monkey print.</p>
+            <p class="price">Price: $18</p>
+            <img src="img/monkey-phone-case.jpg" alt="Monkey Phone Case" class="product-image"/>
+        </div>
+
+    </section>
+
+    <footer>
+        <h3>Contact Us</h3>
+        <p>If you have any questions, call us at:</p>
+        <p><a href="tel:+1234567890">Call Us: +1 234-567-890</a></p>
+    </footer>
+
+    <script>
+        // JavaScript to manipulate images based on their aspect ratio
+        window.onload = function() {
+            const images = document.querySelectorAll('.product-image');
+            
+            images.forEach(image => {
+                image.onload = function() {
+                    const width = image.naturalWidth;
+                    const height = image.naturalHeight;
+                    const aspectRatio = width / height;
+
+                    // Check if the aspect ratio is close to 1 (near square) and adjust the height slightly
+                    if (aspectRatio >= 0.9 && aspectRatio <= 1.1) {
+                        image.style.objectFit = 'cover';  // Keep aspect ratio with cover
+                        image.style.height = 'auto';      // Allow stretching the height
+                        image.style.maxHeight = '300px';  // Make the height a bit taller
+                    }
+                };
+            });
+        };
+    </script>
+</body>
+</html>
